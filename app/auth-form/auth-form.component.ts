@@ -4,24 +4,20 @@ import { User } from './auth-form.interface';
 
 @Component({
   selector: 'auth-form',
+  styleUrls: ['auth-form.component.scss'],
   template: `
-    <div>
+    <div> 
       <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
         <ng-content></ng-content>
-        <label>
-          Email address
-          <input type="email" name="email" ngModel>
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" ngModel>
-        </label>
+        <input type="email" name="email" placeholder="Email address" ngModel>
+        <input type="password" name="password" placeholder="Password" ngModel>
         <button type="submit">
-          Submit
+          Login
         </button>
       </form>
     </div>
   `
+
 })
 export class AuthFormComponent {
 

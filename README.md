@@ -2,7 +2,7 @@
 
 Songs App aplication that will list Songs, listened songs and Favorites songs in the interface.
 
-> This project is part of the completion of the [Angular Pro course](https://ultimateangular.com/courses/#angular-2) course by [Todd Motto](https://twitter.com/toddmotto).
+> The base of the project the completion of the [Angular Pro course](https://ultimateangular.com/courses/#angular-2) course by [Todd Motto](https://twitter.com/toddmotto), however many things were changed from the one created in the course.
 
 ## Project Setup
 
