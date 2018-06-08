@@ -1,6 +1,8 @@
 div {
     background:#fff;
     padding:5rem 2rem 5rem 4rem;
+    position:relative;
+    z-index: 2;
     input {
         width: 21rem;
         margin-bottom: 2rem;
