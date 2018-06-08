@@ -1,0 +1,34 @@
+<div>
+    <div class="auth-form">
+      <auth-form *ngIf="!signup"
+        (submitted)="loginUser($event)">
+        <h3>Login</h3>
+        <div class="signup-info">
+          Don't have an account? <span class="bolder-text" (click)="authToggle()">Create your account</span>
+        </div>
+        <button type="submit">
+            Login
+        </button>
+      </auth-form>
+      <auth-form *ngIf="signup"
+        (submitted)="createUser($event)">
+        <h3>Create account</h3>
+        <div class="signup-info">
+            Already have an account? <span class="bolder-text" (click)="authToggle()">Sign in</span>
+        </div>
+        <button type="submit" class="join-us">
+            Join us
+        </button>
+      </auth-form>
+    </div>
+    <div class="auth-info">
+      <div>
+        Welcome Back.
+        <p>
+          Lorem ipsum dolor sit amet, consectetur 
+          adipiscing elit, sed do eiusmod tempor 
+          incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+</div>

@@ -12,6 +12,14 @@
     }
     .bolder-text {
         font-size: 0.85rem;
+        cursor: pointer;
+    }
+    button {
+        margin-left: 14.6rem;
+        padding: 5px 2rem;
+        &.join-us {
+            margin-left: 14.1rem;
+        }
     }
 }
 .auth-info {

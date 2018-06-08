@@ -8,12 +8,11 @@ import { User } from './auth-form.interface';
   template: `
     <div> 
       <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
-        <ng-content></ng-content>
+      <ng-content select="h3"></ng-content>
+      <ng-content select=".signup-info"></ng-content>
         <input type="email" name="email" placeholder="Email address" ngModel>
         <input type="password" name="password" placeholder="Password" ngModel>
-        <button type="submit">
-          Login
-        </button>
+        <ng-content select="button"></ng-content>
       </form>
     </div>
   `
