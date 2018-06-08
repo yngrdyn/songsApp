@@ -1,5 +1,6 @@
 <div>
     <div class="auth-form">
+
       <auth-form *ngIf="!signup"
         (submitted)="loginUser($event)">
         <h3>Login</h3>
@@ -10,6 +11,7 @@
             Login
         </button>
       </auth-form>
+
       <auth-form *ngIf="signup"
         (submitted)="createUser($event)">
         <h3>Create account</h3>
@@ -20,10 +22,19 @@
             Join us
         </button>
       </auth-form>
+
     </div>
     <div class="auth-info">
-      <div>
+      <div *ngIf="!signup">
         Welcome Back.
+        <p>
+          Lorem ipsum dolor sit amet, consectetur 
+          adipiscing elit, sed do eiusmod tempor 
+          incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div *ngIf="signup">
+        Welcome.
         <p>
           Lorem ipsum dolor sit amet, consectetur 
           adipiscing elit, sed do eiusmod tempor 
