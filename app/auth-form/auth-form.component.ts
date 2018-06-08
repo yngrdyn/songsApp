@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ViewChild, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 
 import { AuthRememberComponent } from './components/auth-remember/auth-remember.component';
 import { AuthMessageComponent } from './components/auth-message/auth-message.component';
@@ -13,7 +13,7 @@ import { User } from './auth-form.interface';
       <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
       <ng-content select="h3"></ng-content>
       <ng-content select=".signup-info"></ng-content>
-        <input type="email" name="email" placeholder="Email address" ngModel>
+        <input type="email" #email name="email" placeholder="Email address" ngModel>
         <input type="password" name="password" placeholder="Password" ngModel>
         <ng-content select="auth-remember"></ng-content>
         <auth-message
@@ -31,13 +31,20 @@ export class AuthFormComponent implements AfterContentInit{
 
   showMessage: boolean = false;
 
+  @ViewChild('email') email: ElementRef;
   @ViewChild(AuthMessageComponent) message: AuthMessageComponent;
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
 
   ngAfterContentInit() {
+    // Focus the first input when rendering the form
+    this.email.nativeElement.focus();
+
+    // Changing number of days the remember me will be active
     if(this.message) {
       this.message.days = 30;
     }
+
+    // Subscribe to remember me checkbox to show or hide the message
     if(this.remember){
       this.remember.forEach((item) => {
         item.checked.subscribe((checked: boolean) => this.showMessage = checked);
