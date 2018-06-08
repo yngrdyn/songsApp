@@ -12,6 +12,7 @@ import { User } from './auth-form.interface';
       <ng-content select=".signup-info"></ng-content>
         <input type="email" name="email" placeholder="Email address" ngModel>
         <input type="password" name="password" placeholder="Password" ngModel>
+        <ng-content select="auth-remember"></ng-content>
         <ng-content select="button"></ng-content>
       </form>
     </div>

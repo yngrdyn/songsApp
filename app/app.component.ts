@@ -10,13 +10,18 @@ import { User } from './auth-form/auth-form.interface';
 export class AppComponent {
 
   signup: boolean = false;
+  rememberMe: boolean = false;
+  
+  rememberUser(remember: boolean) {
+    this.rememberMe = remember;
+  }
 
   createUser(user: User) {
     console.log('Create account', user);
   }
 
   loginUser(user: User) {
-    console.log('Login', user);
+    console.log('Login', user, this.rememberMe);
   }
 
   authToggle() {

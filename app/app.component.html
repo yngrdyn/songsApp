@@ -7,6 +7,9 @@
         <div class="signup-info">
           Don't have an account? <span class="bolder-text" (click)="authToggle()">Create your account</span>
         </div>
+        <auth-remember class="remember-me"
+          (checked)="rememberUser($event)">
+        </auth-remember>
         <button type="submit">
             Login
         </button>
