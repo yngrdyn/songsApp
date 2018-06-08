@@ -4,9 +4,9 @@ Songs App aplication that will list Songs, listened songs and Favorites songs in
 
 ### Login
 
+<img src="https://github.com/yngrdyn/songsApp/blob/master/readme/login.PNG?raw=true">
 
-
-> The base of the project the completion of the [Angular Pro course](https://ultimateangular.com/courses/#angular-2) course by [Todd Motto](https://twitter.com/toddmotto), however many things were changed from the one created in the course.
+> The base of the project is the completion of the [Angular Pro course](https://ultimateangular.com/courses/#angular-2) course by [Todd Motto](https://twitter.com/toddmotto), however many things were changed by me converting this project in a personal version of the original one.
 
 ## Project Setup
 
