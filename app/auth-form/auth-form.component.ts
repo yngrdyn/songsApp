@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ViewChild, ElementRef, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef, ContentChildren, QueryList, AfterContentInit, Renderer } from '@angular/core';
 
 import { AuthRememberComponent } from './components/auth-remember/auth-remember.component';
 import { AuthMessageComponent } from './components/auth-message/auth-message.component';
@@ -35,9 +35,16 @@ export class AuthFormComponent implements AfterContentInit{
   @ViewChild(AuthMessageComponent) message: AuthMessageComponent;
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
 
+  constructor(
+    private renderer: Renderer,
+  ) {
+
+  }
+
   ngAfterContentInit() {
-    // Focus the first input when rendering the form
-    this.email.nativeElement.focus();
+    // Focus the first input when rendering the form with platform render safe
+    //this.email.nativeElement.focus();
+    this.renderer.invokeElementMethod(this.email.nativeElement, 'focus');
 
     // Changing number of days the remember me will be active
     if(this.message) {
