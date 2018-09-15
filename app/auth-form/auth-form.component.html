@@ -1,0 +1,13 @@
+<div> 
+    <form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+    <ng-content select="h3"></ng-content>
+    <ng-content select=".signup-info"></ng-content>
+    <input type="email" #email name="email" placeholder="Email address" ngModel>
+    <input type="password" name="password" placeholder="Password" ngModel>
+    <ng-content select="auth-remember"></ng-content>
+    <auth-message
+        [style.display]="(showMessage ? 'inherit' : 'none')">
+    </auth-message>
+    <ng-content select="button"></ng-content>
+    </form>
+</div>
