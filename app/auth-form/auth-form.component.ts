@@ -22,9 +22,7 @@ export class AuthFormComponent implements AfterContentInit{
 
   constructor(
     private renderer: Renderer,
-  ) {
-
-  }
+  ) { }
 
   ngAfterContentInit() {
     // Focus the first input when rendering the form with platform render safe

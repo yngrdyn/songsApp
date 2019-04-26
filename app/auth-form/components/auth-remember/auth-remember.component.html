@@ -1,5 +1,14 @@
 <label>
     <input type="checkbox" class="checkbox-button__input" (change)="onChecked($event.target.checked)">
     <span class="checkbox-button__control"></span>
-    <span class="checkbox-button__label">Remember me</span>
+    <span class="checkbox-button__label" 
+          tooltip='Save your password' 
+          #mytooltip='tooltip'>
+        Remember me
+        <span class="tooltip-hint"
+            (mouseover)="mytooltip.show()"
+            (mouseout)="mytooltip.hide()">
+            (?)
+        </span>
+    </span>
 </label>

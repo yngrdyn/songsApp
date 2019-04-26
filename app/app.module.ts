@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AuthFormModule } from './auth-form/auth-form.module';
 import { ProfileModule } from './profile/profile.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
